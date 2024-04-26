@@ -1,0 +1,87 @@
+@import url(https://fonts.googleapis.com/css?family=Montserrat); /* Custom font */
+
+/* Basic reset */
+* {
+  margin: 0;
+  padding: 0;
+}
+
+html {
+  height: 100%;
+  background: linear-gradient(rgba(196, 102, 0, 0.6), rgba(155, 89, 182, 0.6)); /* Gradient background */
+}
+
+body {
+  font-family: Montserrat, Arial, Verdana; /* Custom font */
+}
+
+/* Registration form container */
+.registration-container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100vh; /* Full view height */
+  background: linear-gradient(rgba(196, 102, 0, 0.6), rgba(155, 89, 182, 0.6)); /* Gradient background */
+}
+
+/* Form styling */
+.registration-form {
+  padding: 20px;
+  border-radius: 15px; /* Rounded corners */
+  background-color: #ffffff; /* White background for form */
+  box-shadow: 0 4px 8px 0 rgba(47, 176, 199, 0.2); /* Soft shadow */
+  text-align: center; /* Center-align content */
+  width: 90%; /* Ensure the form doesn't exceed its container */
+  max-width: 400px; /* Maximum width for the form */
+  border: 3px solid #333; /* Initial border */
+  transition: border-color 0.5s, border-width 0.5s; /* Smooth transition for border effects */
+}
+
+.registration-form:hover {
+  border-color: #4CAF50; /* Change border color to green on hover */
+  border-width: 5px; /* Increase border width on hover */
+}
+
+.form-group {
+  margin-bottom: 15px; /* Spacing between fields */
+}
+
+.form-group label {
+  display: block; /* Ensures label and input align */
+}
+
+/* Form input styling */
+.input,
+input {
+  width: 100%; /* Full width, constrained by form's width */
+  padding: 10px; /* Padding for better UX */
+  border-radius: 5px; /* Rounded corners */
+  border: 1px solid #8995ff; /* Light border */
+  box-sizing: border-box; /* Prevents padding from affecting width */
+}
+
+button {
+  padding: 10px 20px; /* Padding for button */
+  border: none; /* Remove default border */
+  border-radius: 5px; /* Rounded corners */
+  background-color: #45c240; /* Green color */
+  color: white; /* White text */
+  cursor: pointer; /* Change cursor on hover */
+  transition: background-color 0.3s; /* Smooth hover transition for button */
+}
+
+button:hover {
+  background-color: #54e4ee; /* Different hover color */
+}
+
+/* Message styling */
+.message {
+  margin-bottom: 10px; /* Space before the form */
+  color: red; /* Error messages in red */
+}
+
+/* Additional styles */
+span {
+  display: inline-block; /* Allow text wrapping */
+  margin-top: 10px; /* Space after form */
+}

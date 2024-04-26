@@ -8,7 +8,9 @@ function App() {
     <BrowserRouter>
     <Routes>
       <Route path='/first' element={<DataComponent  />}/>
+      {/* <Route path='/register' element={<Registration/>}/> */}
       <Route path='/' element={<Registration/>}/>
+
       {/* <Route */}
     </Routes>
     </BrowserRouter>
