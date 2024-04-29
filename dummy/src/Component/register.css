@@ -19,6 +19,7 @@ body {
 .registration-container {
   display: flex;
   justify-content: center;
+
   align-items: center;
   height: 100vh; /* Full view height */
   background: linear-gradient(rgba(196, 102, 0, 0.6), rgba(155, 89, 182, 0.6)); /* Gradient background */
@@ -27,13 +28,21 @@ body {
 /* Form styling */
 .registration-form {
   padding: 20px;
-  border-radius: 15px; /* Rounded corners */
-  background-color: #ffffff; /* White background for form */
-  box-shadow: 0 4px 8px 0 rgba(47, 176, 199, 0.2); /* Soft shadow */
-  text-align: center; /* Center-align content */
-  width: 90%; /* Ensure the form doesn't exceed its container */
-  max-width: 400px; /* Maximum width for the form */
-  border: 3px solid #333; /* Initial border */
+  border-radius: 20px;
+  background-color: #ffffff;
+  box-shadow: 0 4px 8px 0 rgba(125, 181, 165, 0.2);
+  text-align: center;
+  width: 84%;
+  max-width: 362px;
+  border: 15px solid #3ff2f26b;
+    border-top-width: 15px;
+    border-top-color: rgba(63, 242, 242, 0.42);
+    border-right-width: 15px;
+    border-right-color: rgba(63, 242, 242, 0.42);
+    border-bottom-width: 15px;
+    border-bottom-color: rgba(63, 242, 242, 0.42);
+    border-left-width: 15px;
+    border-left-color: rgba(63, 242, 242, 0.42);
   transition: border-color 0.5s, border-width 0.5s; /* Smooth transition for border effects */
 }
 
@@ -41,9 +50,14 @@ body {
   border-color: #4CAF50; /* Change border color to green on hover */
   border-width: 5px; /* Increase border width on hover */
 }
-
+.form-container{
+  margin: 5px;
+}
 .form-group {
-  margin-bottom: 15px; /* Spacing between fields */
+  margin-bottom: 15px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
 }
 
 .form-group label {
@@ -53,9 +67,9 @@ body {
 /* Form input styling */
 .input,
 input {
-  width: 100%; /* Full width, constrained by form's width */
+   /* Full width, constrained by form's width */
   padding: 10px; /* Padding for better UX */
-  border-radius: 5px; /* Rounded corners */
+  border-radius: 20px; /* Rounded corners */
   border: 1px solid #8995ff; /* Light border */
   box-sizing: border-box; /* Prevents padding from affecting width */
 }
