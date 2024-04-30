@@ -4,63 +4,50 @@ import { useNavigate, Link } from "react-router-dom";
 import "./css/register.css";
 import url from "./RouteUrl";
 
-export function Registration() {
+export function Login() {
   const [value, setValue] = useState({
-    name: "",
     email: "",
-    password: "",
-    phone: ""
+    password: ""
   });
   const [message, setMessage] = useState(null);
   const navigate = useNavigate();
 
   const handleChange = (event) => {
-    setValue({ ...value, [event.target.name]: event.target.value });
+    setValue((prev)=> ({ ...prev, [event.target.name]: event.target.value }));
   };
 
   const handleSubmit = async (event) => {
     event.preventDefault();
     try {
-      const response = await axios.post(url.register, value);
-      if (response.data && response.data.message) {
-        setMessage(response.data.message);
-        navigate("/");
+      const response = await axios.post(url.login, value);
+      if (response.data.status === true) {
+        setMessage(response.data.msg);
+        localStorage.setItem('token', response.data.token);
+        navigate("/reader");
       } else {
-        window.alert("Registration error: " + response.data.status);
+        window.alert("Login error: " + response.data.msg);
       }
     } catch (error) {
-      console.error("Error:", error);
-      window.alert("Registration error: " + error.message);
+      window.alert("Login error: " + error.response.data.msg);
     }
   };
 
   useEffect(() => {
     const timer = setTimeout(() => {
-      setMessage(null);
+      
+    
     }, 5000); // Clear message after 5 seconds
     return () => clearTimeout(timer); // Cleanup
-  }, [message]);
+  }, []);
 
   return (
     <div className="registration-container">
       <div className="registration-form">
-        <div style={{marginBottom: 20}}>
-        <h2>Register</h2>
+        <div style={{ marginBottom: 20 }}>
+          <h2>Login</h2>
         </div>
         {message && <div className="message">{message}</div>}
         <form onSubmit={handleSubmit}>
-          <div className="form-group">
-            <label htmlFor="name">Name:</label>
-            <input
-            className="input_field"
-              type="text"
-              id="name"
-              name="name"
-              placeholder="Enter your name"
-              value={value.name}
-              onChange={handleChange}
-            />
-          </div>
           <div className="form-group">
             <label htmlFor="email">Email:</label>
             <input
@@ -83,26 +70,12 @@ export function Registration() {
               onChange={handleChange}
             />
           </div>
-          <div className="form-group">
-            <label htmlFor="phone">Phone Number:</label>
-            <input
-              type="text"
-              id="phone"
-              name="phone"
-              placeholder="Enter your phone number"
-              value={value.phone}
-              onChange={handleChange}
-            />
-          </div>
-          <button type="submit">Register</button>
+          <button type="submit">Login</button>
         </form>
         <span>
-          Already have an account? <Link to="/">Login</Link>
+          Don't have an account? <Link to="/register">Register</Link>
         </span>
       </div>
     </div>
   );
 }
-
-
-
