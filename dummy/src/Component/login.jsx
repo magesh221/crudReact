@@ -21,9 +21,11 @@ export function Login() {
     try {
       const response = await axios.post(url.login, value);
       if (response.data.status === true) {
+        console.log('response.data.status: ', response.data.msg);
         setMessage(response.data.msg);
-        localStorage.setItem('token', response.data.token);
-        navigate("/reader");
+        // localStorage.setItem('token', response.data.token);
+        sessionStorage.setItem('token', response.data.token)
+        navigate("/imageUpload");
       } else {
         window.alert("Login error: " + response.data.msg);
       }
@@ -34,11 +36,10 @@ export function Login() {
 
   useEffect(() => {
     const timer = setTimeout(() => {
-      
-    
+      setMessage(null);
     }, 5000); // Clear message after 5 seconds
     return () => clearTimeout(timer); // Cleanup
-  }, []);
+  }, [message]);
 
   return (
     <div className="registration-container">

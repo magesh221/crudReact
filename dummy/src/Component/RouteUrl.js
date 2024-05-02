@@ -3,5 +3,6 @@ module.exports={
     login :`${Url}/login`,
     register :`${Url}/register`,
     reader :`${Url}/reader`,
+    imageupload:`${Url}/imageUpload`
     
 }

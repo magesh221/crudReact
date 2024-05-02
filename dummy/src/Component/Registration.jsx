@@ -26,10 +26,10 @@ export function Registration() {
         setMessage(response.data.message);
         navigate("/");
       } else {
-        window.alert("Registration error: " + response.data.status);
+        window.alert("Registration error: " + response.data.message);
       }
     } catch (error) {
-      console.error("Error:", error);
+      console.error("Error:", error.message);
       window.alert("Registration error: " + error.message);
     }
   };

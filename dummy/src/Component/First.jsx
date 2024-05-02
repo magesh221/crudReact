@@ -1,15 +1,21 @@
 import React, { useEffect, useState } from "react";
 import axios from "axios";
-
+import Url from './RouteUrl'
 export function DataComponent() {
   const [data, setData] = useState(null);
   const [loading, setLoading] = useState(true);
   const [error, setError] = useState(null);
-
+  
   useEffect(() => {
+    const token = sessionStorage.getItem('token')
     const fetchData = async () => {
       try {
-        const response = await axios.get("http://localhost:8080/user/reader");
+        const response = await axios.get(Url.reader,{
+          headers: {
+            'Content-Type': 'multipart/form-data',
+            'Authorization': `Bearer ${token}`
+          }
+        });
 
         const userData = response.data.msg;
         console.log("userData: ", userData);
