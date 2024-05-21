@@ -12,6 +12,7 @@ function MyComponent() {
             throw new Error('Failed to fetch data');
           }
           const data = await response.json();
+          console.log('data: ', data);
           // Process the data here if needed
           setSuccessMessage('Data fetched successfully!');
         } catch (error) {

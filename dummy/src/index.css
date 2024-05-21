@@ -20,3 +20,40 @@ code {
   justify-content: space-between;
   
 }
+.img_uplde{
+  width: 100%;
+  height: 100%;
+  min-height: 100vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-direction: column-reverse;
+}
+.profile_pic{
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-direction: column;
+  gap: 20px;
+
+}
+.img_flex{
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-direction: column;
+  gap: 20px;
+}
+
+.uploaded-image{
+  width: 250px;
+  height: 250px;
+  background-color: blue;
+  
+}
+.input-box{
+  padding: 15px;
+  border-radius: 50px;
+  border: 5px solid #8995ff;
+  box-sizing: border-box;
+}
